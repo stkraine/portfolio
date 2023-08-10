@@ -23,33 +23,39 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 d-none d-md-block sidebar">
+            <nav class="col-md-2 d-none d-md-block sidebar">
                 <div class="text-center">
                     <h3>Steven Kraine</h3>
+                    <img src="images/professional_picture.jpg", alt="ME!", height="200", style="border-radius: 15%;">
                     <p>AI enthusiast | Tinkerer | Programmer</p>
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="./../index.html">Back to Home</a>
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Project 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="project2.html">Project 2</a>
-                    </li>
-                    <!-- Add more project links as needed -->
-                </ul>
+                        <a class="nav-link" data-toggle="collapse" href="#projectsCollapse">Projects</a>
+                        <div id="projectsCollapse" class="collapse">
+                    <ul class="sub-menu pl-3">
+                        <li><a href="pages/project1.html">Project 1</a></li>
+                        <li><a href="project2.html">Project 2</a></li>
+                        <li><a href="subdirectory/subproject1.html">Subproject 1</a></li>
+                        <li><a href="subdirectory/subproject2.html">Subproject 2</a></li>
+                        <!-- Add more links and subdirectories as needed -->
+                    </ul>
             </div>
+        </li>
+        <!-- Add more links as needed -->
+    </ul>
+            </nav>
 
-            <main role="main" class="col-md-10 content">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content">
                 <div class="d-flex justify-content-center align-items-center pt-3 pb-2 mb-3">
-                    <h1 class="h2">Project 1</h1>
+                    <h1 class="h2">Welcome to my portfolio!</h1>
                 </div>
-                <div class="project-details">
-                    <img src="project1.jpg" alt="Project 1">
-                    <p>Description of Project 1.</p>
-                </div>
+                <p>This is the home page of everything Steven Kraine. From projects that I have worked on to programming topics that I find exciting!
+                    This is the space where it will all go.
+                </p>
             </main>
         </div>
     </div>
