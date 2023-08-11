@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles.css">
     <script>
-        hljs.configure({ languages: [lang-python] });
+        hljs.configure({ languages: [lang - python] });
         hljs.initHighlightingOnLoad();
     </script>
 
@@ -18,120 +18,133 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <iframe src="/navigation_bar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+            <iframe src="/navigation_bar.html"
+                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
-            
+
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content">
-                <md-block>
-                    # Crafting Elegant Code with Factory Design Patterns in Python: A Deep Dive
+                <h1 id="crafting-elegant-code-with-factory-design-patterns-in-python-a-deep-dive">Crafting Elegant Code
+                    with Factory Design Patterns in Python: A Deep Dive</h1>
+                <p>In the realm of software design, creating efficient, scalable, and maintainable code is a
+                    never-ending quest. One design pattern that has stood the test of time and proven its worth is the
+                    Factory Design Pattern. In this article, we will embark on a journey through the world of factories,
+                    explore their significance, and delve into practical Python examples to illustrate their power.</p>
+                <h2 id="unraveling-the-factory-design-pattern">Unraveling the Factory Design Pattern</h2>
+                <p>The Factory Design Pattern is a creational pattern that provides an abstract interface for creating
+                    objects while allowing subclasses to determine the type of objects to create. In simpler terms, it
+                    centralizes object creation, promoting loose coupling between the client code and the objects being
+                    created. This decoupling enhances code flexibility and makes it easier to accommodate future changes
+                    or additions to the object hierarchy.</p>
+                <p>Factories are particularly useful when:</p>
+                <ul>
+                    <li>The creation process is complex or involves multiple steps.</li>
+                    <li>The codebase needs to be extensible to accommodate new types of objects.</li>
+                    <li>The client code should not be dependent on the concrete classes being instantiated.</li>
+                </ul>
+                <h2 id="benefits-of-using-factory-design-patterns">Benefits of Using Factory Design Patterns</h2>
+                <ol>
+                    <li>
+                        <p><strong>Code Reusability:</strong> Factories encapsulate object creation logic, reducing the
+                            need for duplication across the codebase. This results in cleaner, more maintainable code.
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Flexibility:</strong> By centralizing object creation, factories provide a convenient
+                            point to modify or extend the creation process without impacting client code.</p>
+                    </li>
+                    <li>
+                        <p><strong>Encapsulation:</strong> Factory patterns promote encapsulation by keeping the
+                            creation details separate from the client code, adhering to the principle of information
+                            hiding.</p>
+                    </li>
+                    <li>
+                        <p><strong>Testability:</strong> Factories enable easier unit testing since they provide a
+                            single point where object creation logic can be mocked or stubbed.</p>
+                    </li>
+                    <li>
+                        <p><strong>Scalability:</strong> As the application grows, the factory pattern helps manage the
+                            complexity of creating various objects by providing a structured approach.</p>
+                    </li>
+                </ol>
+                <h2 id="practical-examples">Practical Examples</h2>
+                <h3 id="example-1-simple-factory">Example 1: Simple Factory</h3>
+                <p>Let&#39;s start with a basic example of a <code>ShapeFactory</code> that creates different shapes.
+                </p>
+                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shape</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">draw</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
 
-In the realm of software design, creating efficient, scalable, and maintainable code is a never-ending quest. One design pattern that has stood the test of time and proven its worth is the Factory Design Pattern. In this article, we will embark on a journey through the world of factories, explore their significance, and delve into practical Python examples to illustrate their power.
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span><span class="hljs-params">(Shape)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">draw</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"Drawing a circle"</span>)
 
-## Unraveling the Factory Design Pattern
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Square</span><span class="hljs-params">(Shape)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">draw</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"Drawing a square"</span>)
 
-The Factory Design Pattern is a creational pattern that provides an abstract interface for creating objects while allowing subclasses to determine the type of objects to create. In simpler terms, it centralizes object creation, promoting loose coupling between the client code and the objects being created. This decoupling enhances code flexibility and makes it easier to accommodate future changes or additions to the object hierarchy.
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShapeFactory</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_shape</span><span class="hljs-params">(self, shape_type)</span>:</span>
+        <span class="hljs-keyword">if</span> shape_type == <span class="hljs-string">"circle"</span>:
+            <span class="hljs-keyword">return</span> Circle()
+        <span class="hljs-keyword">elif</span> shape_type == <span class="hljs-string">"square"</span>:
+            <span class="hljs-keyword">return</span> Square()
 
-Factories are particularly useful when:
-
-- The creation process is complex or involves multiple steps.
-- The codebase needs to be extensible to accommodate new types of objects.
-- The client code should not be dependent on the concrete classes being instantiated.
-
-## Benefits of Using Factory Design Patterns
-
-1. **Code Reusability:** Factories encapsulate object creation logic, reducing the need for duplication across the codebase. This results in cleaner, more maintainable code.
-
-2. **Flexibility:** By centralizing object creation, factories provide a convenient point to modify or extend the creation process without impacting client code.
-
-3. **Encapsulation:** Factory patterns promote encapsulation by keeping the creation details separate from the client code, adhering to the principle of information hiding.
-
-4. **Testability:** Factories enable easier unit testing since they provide a single point where object creation logic can be mocked or stubbed.
-
-5. **Scalability:** As the application grows, the factory pattern helps manage the complexity of creating various objects by providing a structured approach.
-
-## Practical Examples
-
-### Example 1: Simple Factory
-
-Let's start with a basic example of a `ShapeFactory` that creates different shapes.
-
-```python
-class Shape:
-    def draw(self):
-        pass
-
-class Circle(Shape):
-    def draw(self):
-        print("Drawing a circle")
-
-class Square(Shape):
-    def draw(self):
-        print("Drawing a square")
-
-class ShapeFactory:
-    def create_shape(self, shape_type):
-        if shape_type == "circle":
-            return Circle()
-        elif shape_type == "square":
-            return Square()
-
-# Client code
+<span class="hljs-comment"># Client code</span>
 factory = ShapeFactory()
-circle = factory.create_shape("circle")
-square = factory.create_shape("square")
+circle = factory.create_shape(<span class="hljs-string">"circle"</span>)
+square = factory.create_shape(<span class="hljs-string">"square"</span>)
 
-circle.draw()  # Output: Drawing a circle
-square.draw()  # Output: Drawing a square
-```
+circle.draw()  <span class="hljs-comment"># Output: Drawing a circle</span>
+square.draw()  <span class="hljs-comment"># Output: Drawing a square</span>
+</code></pre>
+                <h3 id="example-2-factory-method">Example 2: Factory Method</h3>
+                <p>In this example, we&#39;ll create a <code>Document</code> factory with subclasses for different
+                    document types.</p>
+                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Document</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_page</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
 
-### Example 2: Factory Method
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PDFDocument</span><span class="hljs-params">(Document)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_page</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> PDFPage()
 
-In this example, we'll create a `Document` factory with subclasses for different document types.
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WordDocument</span><span class="hljs-params">(Document)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_page</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> WordPage()
 
-```python
-class Document:
-    def create_page(self):
-        pass
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Page</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">render</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
 
-class PDFDocument(Document):
-    def create_page(self):
-        return PDFPage()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PDFPage</span><span class="hljs-params">(Page)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">render</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"Rendering a PDF page"</span>)
 
-class WordDocument(Document):
-    def create_page(self):
-        return WordPage()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WordPage</span><span class="hljs-params">(Page)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">render</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">"Rendering a Word page"</span>)
 
-class Page:
-    def render(self):
-        pass
-
-class PDFPage(Page):
-    def render(self):
-        print("Rendering a PDF page")
-
-class WordPage(Page):
-    def render(self):
-        print("Rendering a Word page")
-
-# Client code
+<span class="hljs-comment"># Client code</span>
 pdf_factory = PDFDocument()
 pdf_page = pdf_factory.create_page()
-pdf_page.render()  # Output: Rendering a PDF page
+pdf_page.render()  <span class="hljs-comment"># Output: Rendering a PDF page</span>
 
 word_factory = WordDocument()
 word_page = word_factory.create_page()
-word_page.render()  # Output: Rendering a Word page
-```
+word_page.render()  <span class="hljs-comment"># Output: Rendering a Word page</span>
+</code></pre>
+                <h2 id="conclusion">Conclusion</h2>
+                <p>The Factory Design Pattern is a powerful tool in the arsenal of software design patterns. It enhances
+                    code reusability, flexibility, and encapsulation, making it an ideal choice for managing object
+                    creation in complex systems. By centralizing creation logic, factories promote a more organized and
+                    maintainable codebase, facilitating future modifications and extensions.</p>
+                <p>Through our exploration of the Factory Design Pattern and its practical Python examples, you have
+                    gained a solid foundation for applying this pattern to your own projects. By leveraging factories,
+                    you can embark on a journey toward more elegant, scalable, and maintainable code that stands the
+                    test of time.</p>
 
-## Conclusion
 
-The Factory Design Pattern is a powerful tool in the arsenal of software design patterns. It enhances code reusability, flexibility, and encapsulation, making it an ideal choice for managing object creation in complex systems. By centralizing creation logic, factories promote a more organized and maintainable codebase, facilitating future modifications and extensions.
-
-Through our exploration of the Factory Design Pattern and its practical Python examples, you have gained a solid foundation for applying this pattern to your own projects. By leveraging factories, you can embark on a journey toward more elegant, scalable, and maintainable code that stands the test of time.
-                </md-block>
-
-
-<!-- THIS IS WHERE ALL THE COOL THINGS GO!!! -->
+                <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! -->
 
 
 
