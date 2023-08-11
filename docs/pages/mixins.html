@@ -6,49 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mixins</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/docs/styles.css">
+    <script>
+        hljs.configure({ languages: [lang-python] });
+        hljs.initHighlightingOnLoad();
+    </script>
+
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block sidebar">
-                <div class="text-center">
-                    <h3>Steven Kraine</h3>
-                    <img src="../images/professional_picture.jpg" , alt="ME!" , height="200" ,
-                        style="border-radius: 15%;">
-                    <p>AI enthusiast | Tinkerer | Programmer</p>
-                </div>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#projectsCollapse">Projects</a>
-                        <div id="projectsCollapse" class="collapse">
-                            <ul class="sub-menu pl-3">
-                                <li><a href="pages/project1.html">Project 1</a></li>
-                                <li><a href="project2.html">Project 2</a></li>
-                                <li><a href="subdirectory/subproject1.html">Subproject 1</a></li>
-                                <li><a href="subdirectory/subproject2.html">Subproject 2</a></li>
-                                <!-- Add more links and subdirectories as needed -->
-                            </ul>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#programmingCollapse">Programming Resources</a>
-                        <div id="programmingCollapse" class="collapse">
-                            <ul class="sub-menu pl-3">
-                                <li><a href="pages/mixins.html">Mixins</a></li>
-                                <li><a href="project2.html">Project 2</a></li>
-                                <li><a href="subdirectory/subproject1.html">Subproject 1</a></li>
-                                <li><a href="subdirectory/subproject2.html">Subproject 2</a></li>
-                                <!-- Add more links and subdirectories as needed -->
-                            </ul>
-                        </div>
-                    </li>
-                    <!-- Add more links as needed -->
-                </ul>
-            </nav>
+            <iframe src="/docs/navigation_bar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
+            
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content">
                 <h1 id="unleashing-the-power-of-mixins-in-python-a-comprehensive-guide">Unleashing the Power of Mixins
                     in Python: A Comprehensive Guide</h1>
@@ -99,42 +70,43 @@
                 <p>Imagine developing a web application necessitating user authentication. Rather than replicating
                     authentication code across multiple classes, an <code>AuthMixin</code> can be conceived to manage
                     authentication tasks.</p>
-                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AuthMixin</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">login</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, username, password)</span></span>:
-        <span class="hljs-comment"># Authentication logic</span>
+                <pre><code class="lang-python">class AuthMixin:
+    def login(self, username, password):
+        # Authentication logic
         pass
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">logout</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
-        <span class="hljs-comment"># Logout logic</span>
+    def logout(self):
+        # Logout logic
         pass
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserProfile</span>(<span class="hljs-title">AuthMixin</span>):</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, username)</span></span>:
-        <span class="hljs-keyword">self</span>.username = username
+class UserProfile(AuthMixin):
+    def __init__(self, username):
+        self.username = username
 
-user = UserProfile(<span class="hljs-string">"john_doe"</span>)
-user.login(<span class="hljs-string">"john_doe"</span>, <span class="hljs-string">"secretpassword"</span>)
+user = UserProfile("john_doe")
+user.login("john_doe", "secretpassword")
 user.logout()
 </code></pre>
                 <h3 id="example-2-styling-mixin">Example 2: Styling Mixin</h3>
                 <p>In a frontend application, the pursuit of uniform styling across diverse UI components is a recurring
                     endeavor. The <code>StylingMixin</code> steps in to preserve a consistent appearance throughout the
                     application.</p>
-                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StylingMixin</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">apply_styles</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
-        <span class="hljs-comment"># Apply common styles</span>
+
+                <pre><code class="lang-python">class StylingMixin:
+    def apply_styles (self):
+        # Apply common styles
         pass
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span>(<span class="hljs-title">StylingMixin</span>):</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, label)</span></span>:
-        <span class="hljs-keyword">self</span>.label = label
+class Button (StylingMixin):
+    def __init__ (self, label):
+        self.label = label
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextBox</span>(<span class="hljs-title">StylingMixin</span>):</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, text)</span></span>:
-        <span class="hljs-keyword">self</span>.text = text
+class TextBox(StylingMixin):
+    def __init__(self, text):
+       self.text = text
 
-styled_button = Button(<span class="hljs-string">"Click Me"</span>)
-styled_textbox = TextBox(<span class="hljs-string">"Enter your message"</span>)
+styled_button = Button("Click Me")
+styled_textbox = TextBox("Enter your message")
 
 styled_button.apply_styles()
 styled_textbox.apply_styles()
@@ -158,4 +130,7 @@ styled_textbox.apply_styles()
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/path/to/styles/default.min.css">
+    <script src="/path/to/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>

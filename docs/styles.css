@@ -99,9 +99,10 @@ body {
     font-family: Arial, sans-serif;
     height: 100rem;
     overflow-y: auto;
+    font-size: 18px
 }
 .sidebar {
-    height: 100vh; /* Set the sidebar's height to 100% of the viewport height */
+    height: 100; /* Set the sidebar's height to 100% of the viewport height */
     background-color: #35424a;
     color: white;
     padding: 20px;
@@ -110,4 +111,19 @@ body {
 }
 .content {
     padding: 20px;
+}
+
+pre {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: 25px;
+    margin-right:25px;
+    padding:20px;
+}
+.container-fluid {
+    height: 100vh;
+}
+
+.row {
+    height: 100%;
 }
