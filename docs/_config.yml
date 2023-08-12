@@ -5,7 +5,7 @@ theme: minima
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: Steven's portfolio
 
 # Short bio or description (displayed in the header)
 description: Web Developer from Somewhere
@@ -67,9 +67,8 @@ kramdown:
   # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    disable: true
     # Use existing pygments syntax highlighting css
-    # css_class: 'highlight'
+    css_class: 'highlight'
 
 # Set the Sass partials directory, as we're using @imports
 sass:
