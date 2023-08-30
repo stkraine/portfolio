@@ -127,6 +127,7 @@ pre {
     height: 100%;
 }
 
-.code{
-    background-color: lightgray;
+code.lang-python{
+    background: lightgray;
 }
+
