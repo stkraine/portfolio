@@ -126,3 +126,7 @@ pre {
 .row {
     height: 100%;
 }
+
+code{
+    background-color: lightgray;
+}
