@@ -8,6 +8,13 @@
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        hljs.configure({ languages: [lang - python] });
+        hljs.initHighlightingOnLoad();
+    </script>
 
 
 </head>
@@ -20,112 +27,101 @@
 
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content">
-                <md-block>
-                    <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
-                    # Demystifying Singleton Design Pattern in Python with Examples
-
-                    Introduction:
-
-                    In the world of software design, design patterns provide solutions to recurring problems, helping
+                <p>Title: Demystifying Singleton Design Pattern in Python with Examples</p>
+                <p>Introduction:</p>
+                <p>In the world of software design, design patterns provide solutions to recurring problems, helping
                     developers create more organized, maintainable, and efficient code. One such pattern is the
                     Singleton design pattern. In this blog post, we will explore the Singleton pattern in detail, its
-                    benefits, and provide practical examples of how to implement it in Python.
-
-                    Understanding the Singleton Pattern:
-
-                    The Singleton pattern ensures that a class has only one instance and provides a global point of
+                    benefits, and provide practical examples of how to implement it in Python.</p>
+                <p>Understanding the Singleton Pattern:</p>
+                <p>The Singleton pattern ensures that a class has only one instance and provides a global point of
                     access to that instance. This can be particularly useful when you want to control the instantiation
                     of a class to prevent multiple instances from being created, such as in scenarios involving database
-                    connections, configuration managers, and logging services.
+                    connections, configuration managers, and logging services.</p>
+                <p>Benefits of the Singleton Pattern:</p>
+                <ol>
+                    <li>
+                        <p><strong>Single Point of Access</strong>: With a Singleton, you can ensure that there&#39;s
+                            only one instance of a class accessible throughout your application. This prevents the
+                            creation of multiple instances that could lead to inefficiencies or conflicts.</p>
+                    </li>
+                    <li>
+                        <p><strong>Resource Sharing</strong>: Singleton instances can be used to share resources, such
+                            as database connections, thread pools, or expensive resources, across different parts of
+                            your application.</p>
+                    </li>
+                    <li>
+                        <p><strong>Global Configuration</strong>: Singleton instances can be used to manage global
+                            configuration settings or application-wide state.</p>
+                    </li>
+                    <li>
+                        <p><strong>Memory Management</strong>: By limiting the number of instances, the Singleton
+                            pattern helps control memory consumption and resource usage.</p>
+                    </li>
+                </ol>
+                <p>Implementing the Singleton Pattern in Python:</p>
+                <p>Here&#39;s a step-by-step guide to implementing the Singleton pattern in Python:</p>
+                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span>:</span>
+    _instance = <span class="hljs-keyword">None</span>
 
-                    Benefits of the Singleton Pattern:
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__new__</span><span class="hljs-params">(cls)</span>:</span>
+        <span class="hljs-keyword">if</span> cls._instance <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            cls._instance = super().__new__(cls)
+        <span class="hljs-keyword">return</span> cls._instance
+</code></pre>
+                <p>In this example, the <code>__new__</code> method is overridden to ensure that only a single instance
+                    is created. The <code>cls._instance</code> attribute holds the reference to the single instance of
+                    the class.</p>
+                <p>Example Scenarios:</p>
+                <ol>
+                    <li><strong>Logger Class</strong>:</li>
+                </ol>
+                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logger</span><span class="hljs-params">(Singleton)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">log</span><span class="hljs-params">(self, message)</span>:</span>
+        <span class="hljs-comment"># Implementation of logging logic</span>
 
-                    1. **Single Point of Access**: With a Singleton, you can ensure that there's only one instance of a
-                    class accessible throughout your application. This prevents the creation of multiple instances that
-                    could lead to inefficiencies or conflicts.
+<span class="hljs-comment"># Usage</span>
+logger1 = Logger()
+logger2 = Logger()
 
-                    2. **Resource Sharing**: Singleton instances can be used to share resources, such as database
-                    connections, thread pools, or expensive resources, across different parts of your application.
+print(logger1 <span class="hljs-keyword">is</span> logger2)  <span class="hljs-comment"># Output: True</span>
+</code></pre>
+                <ol>
+                    <li><strong>Database Connection</strong>:</li>
+                </ol>
+                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DatabaseConnection</span><span class="hljs-params">(Singleton)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">connect</span><span class="hljs-params">(self, database_url)</span>:</span>
+        <span class="hljs-comment"># Implementation of database connection logic</span>
 
-                    3. **Global Configuration**: Singleton instances can be used to manage global configuration settings
-                    or application-wide state.
+<span class="hljs-comment"># Usage</span>
+connection1 = DatabaseConnection()
+connection2 = DatabaseConnection()
 
-                    4. **Memory Management**: By limiting the number of instances, the Singleton pattern helps control
-                    memory consumption and resource usage.
+print(connection1 <span class="hljs-keyword">is</span> connection2)  <span class="hljs-comment"># Output: True</span>
+</code></pre>
+                <ol>
+                    <li><strong>Application Configuration</strong>:</li>
+                </ol>
+                <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppConfig</span><span class="hljs-params">(Singleton)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.settings = {}
 
-                    Implementing the Singleton Pattern in Python:
+<span class="hljs-comment"># Usage</span>
+config1 = AppConfig()
+config1.settings[<span class="hljs-string">'debug'</span>] = <span class="hljs-keyword">True</span>
 
-                    Here's a step-by-step guide to implementing the Singleton pattern in Python:
-
-                    ```python
-                    class Singleton:
-                    _instance = None
-
-                    def __new__(cls):
-                    if cls._instance is None:
-                    cls._instance = super().__new__(cls)
-                    return cls._instance
-                    ```
-
-                    In this example, the `__new__` method is overridden to ensure that only a single instance is
-                    created. The `cls._instance` attribute holds the reference to the single instance of the class.
-
-                    Example Scenarios:
-
-                    1. **Logger Class**:
-
-                    ```python
-                    class Logger(Singleton):
-                    def log(self, message):
-                    # Implementation of logging logic
-
-                    # Usage
-                    logger1 = Logger()
-                    logger2 = Logger()
-
-                    print(logger1 is logger2) # Output: True
-                    ```
-
-                    2. **Database Connection**:
-
-                    ```python
-                    class DatabaseConnection(Singleton):
-                    def connect(self, database_url):
-                    # Implementation of database connection logic
-
-                    # Usage
-                    connection1 = DatabaseConnection()
-                    connection2 = DatabaseConnection()
-
-                    print(connection1 is connection2) # Output: True
-                    ```
-
-                    3. **Application Configuration**:
-
-                    ```python
-                    class AppConfig(Singleton):
-                    def __init__(self):
-                    self.settings = {}
-
-                    # Usage
-                    config1 = AppConfig()
-                    config1.settings['debug'] = True
-
-                    config2 = AppConfig()
-                    print(config2.settings['debug']) # Output: True
-                    ```
-
-                    Conclusion:
-
-                    The Singleton design pattern is a powerful tool in a developer's toolkit for ensuring a single
+config2 = AppConfig()
+print(config2.settings[<span class="hljs-string">'debug'</span>])  <span class="hljs-comment"># Output: True</span>
+</code></pre>
+                <p>Conclusion:</p>
+                <p>The Singleton design pattern is a powerful tool in a developer&#39;s toolkit for ensuring a single
                     instance of a class across an application. By controlling instantiation, the Singleton pattern helps
                     manage resources, maintain global states, and enhance code efficiency. In Python, implementing the
                     Singleton pattern is straightforward and can be applied to various scenarios, such as managing
-                    loggers, database connections, and configurations. However, it's important to use the Singleton
+                    loggers, database connections, and configurations. However, it&#39;s important to use the Singleton
                     pattern judiciously, as excessive use can lead to global state management issues and decreased code
-                    testability.
+                    testability.</p>
 
-                </md-block>
 
 
                 <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
