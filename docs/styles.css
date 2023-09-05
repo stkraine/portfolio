@@ -110,6 +110,15 @@ body {
 }
 .content {
     padding: 20px;
+    -webkit-box-shadow: 0 0 15px 2px lightgray;
+    -moz-box-shadow: 0 0 15px 2px lightgray;
+    box-shadow: 0 0 15px 2px lightgray;
+    background-color: rgb(231, 231, 231);
+    border-color: black;
+    margin: auto;
+    width: 70%;
+    height: 100%;
+    
 }
 
 pre {
@@ -120,7 +129,7 @@ pre {
     padding:20px;
 }
 .container-fluid {
-    height: 100vh;
+    height: 100%;
 }
 
 .row {
@@ -130,4 +139,13 @@ pre {
 code.lang-python{
     background: lightgray;
 }
+
+code{
+    color: orangered;
+    background-color: lightgray;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 4px;
+}
+
 
