@@ -27,18 +27,18 @@
 
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content">
-                <p>Title: Demystifying Singleton Design Pattern in Python with Examples</p>
-                <p>Introduction:</p>
+                <h1>Demystifying Singleton Design Pattern in Python with Examples</h1>
+                <h2>Introduction:</h2>
                 <p>In the world of software design, design patterns provide solutions to recurring problems, helping
                     developers create more organized, maintainable, and efficient code. One such pattern is the
                     Singleton design pattern. In this blog post, we will explore the Singleton pattern in detail, its
                     benefits, and provide practical examples of how to implement it in Python.</p>
-                <p>Understanding the Singleton Pattern:</p>
+                <h2>Understanding the Singleton Pattern:</h2>
                 <p>The Singleton pattern ensures that a class has only one instance and provides a global point of
                     access to that instance. This can be particularly useful when you want to control the instantiation
                     of a class to prevent multiple instances from being created, such as in scenarios involving database
                     connections, configuration managers, and logging services.</p>
-                <p>Benefits of the Singleton Pattern:</p>
+                <h2>Benefits of the Singleton Pattern:</h2>
                 <ol>
                     <li>
                         <p><strong>Single Point of Access</strong>: With a Singleton, you can ensure that there&#39;s
@@ -59,7 +59,7 @@
                             pattern helps control memory consumption and resource usage.</p>
                     </li>
                 </ol>
-                <p>Implementing the Singleton Pattern in Python:</p>
+                <h2>Implementing the Singleton Pattern in Python:</h2>
                 <p>Here&#39;s a step-by-step guide to implementing the Singleton pattern in Python:</p>
                 <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span>:</span>
     _instance = <span class="hljs-keyword">None</span>
@@ -113,7 +113,7 @@ config1.settings[<span class="hljs-string">'debug'</span>] = <span class="hljs-k
 config2 = AppConfig()
 print(config2.settings[<span class="hljs-string">'debug'</span>])  <span class="hljs-comment"># Output: True</span>
 </code></pre>
-                <p>Conclusion:</p>
+                <h2>Conclusion:</h2>
                 <p>The Singleton design pattern is a powerful tool in a developer&#39;s toolkit for ensuring a single
                     instance of a class across an application. By controlling instantiation, the Singleton pattern helps
                     manage resources, maintain global states, and enhance code efficiency. In Python, implementing the
