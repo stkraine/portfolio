@@ -126,3 +126,8 @@ pre {
 .row {
     height: 100%;
 }
+
+code.lang-python{
+    background: lightgray;
+}
+
