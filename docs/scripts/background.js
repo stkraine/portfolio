@@ -54,8 +54,9 @@ class Particle {
     let particles = [];
     
     function setup() {
-      createCanvas(displayWidth, displayHeight);
-      for(let i = 0;i<width/10;i++){
+      var canv = createCanvas(displayWidth, displayHeight);
+      canv.id('sketch');
+      for(let i = 0;i<width/5;i++){
         particles.push(new Particle());
       }
     }
