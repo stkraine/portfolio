@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head id="back">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FANCY_TITLE</title>
@@ -16,33 +16,36 @@
         hljs.configure({ languages: [lang - python] });
         hljs.initHighlightingOnLoad();
     </script>
+    <script src="/scripts/background.js"></script>
 
 
 
 </head>
-
+    
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <iframe src="/navigation_bar.html"
-                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    
+        <div class="container-fluid">
+            <div class="row">
+                <iframe src="/navigation_bar.html"
+                    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
 
-            <main role="main" class="content">
-                <md-block>
+                <main role="main" class="content">
+                    <md-block>
+                        <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
+
+                    </md-block>
+
+
                     <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
 
-                </md-block>
-
-
-                <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
 
 
 
-
-            </main>
+                </main>
+            </div>
         </div>
-    </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
