@@ -106,9 +106,9 @@ body {
     border-color: black;
     margin: auto;
     width: 70%;
-    height: 100vh;
+    height: 98vh;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 200px;
     overflow: auto;
     
 }
@@ -140,4 +140,10 @@ code{
     border-radius: 4px;
 }
 
+#sketch {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
 
