@@ -147,3 +147,6 @@ code{
     z-index: -1;
   }
 
+.alert {
+    background-color: lightgoldenrodyellow;
+}
