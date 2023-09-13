@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="back">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FANCY_TITLE</title>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        hljs.configure({ languages: [lang - python] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script src="/scripts/background.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <iframe src="/navigation_bar.html"
+                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+
+            <main role="main" class="content">
+                <h1 style="text-align: center;"> Saggin' Waggin' </h1>
+                <md-block>
+
+                    ## The super-capacitor powered go-kart
+                    ***
+                    ### Motivation
+                    As I learned more about electronics and electrical systems through robotics and my other activities,
+                    I began to explore
+                    the idea of an electric go-kart. The project really began when I found an old washing machine motor
+                    in a barn and wanted to make something that I could
+                    ride on. Basically, I strapped the motor on to a very thin sheet of plywood that bent under the
+                    weight of the motor. That was the beginning of the Saggin' Waggin'!
+
+                    Saggin' Waggin' v1.0 had many issues:
+                    - It was quite flimsy. to the point where sitting on it made me nervous it would break.
+                    - There was no steering... I mean at all, and I was not intending to make a drag strig go-kart.
+                    - The washing machine motor required an extension cord to run as I did not have a battery or
+                    inverter on the go-kart.
+                    ### V2.0 The Gas Edition
+                    The findings from this first iteration led to Saggin' Waggin' v2.0. The second iteration of the
+                    project became a very quick, but also slow success. I rebuilt the frame to
+                    be triangular and actually have sterring components, albeit just a board that I would grab on to and
+                    push around to steer. As you can see from the image, the gas go-kart motor that I added gave me some
+                    more power and
+                    wasn't tethered to the wall. This led to something that I could ride around on and wouldn't be too
+                    precarious.
+
+                    As expected, Saggin' Waggin' v2.0 had some issues as well:
+                    - I didn't love the gas engine.
+                    - The top speed wasn't very high.
+                    - the clutch would slip constantly and it was difficult to start because it was designed for a
+                    smaller go-kart.</md-block>
+                <div class="text-center">
+                    <img src="/images/saggin_waggin_2.jpg" , alt="saggin_waggin" , class="image_center">
+                    Saggin' Waggin' V2.0
+                </div>
+                <md-block>
+                    ### V3.0 The return of the charge!
+                    After V2.0, I set the project aside as I became displeased with the gas propulsion system and was
+                    short on funds for a larger engine. However,
+                    As I got older, my knowlege of electrical propulsion systems expanded and I discovered the
+                    super-capacitor. This rabbit-hole adventure turned into
+                    a facination with making a quick-charging, rideable go-kart. Armed with my first co-ops earnings, I
+                    revisited the waggin'...
+
+                    I decided to take a risk on some claimed super-capacitors from Alibaba.com and was pleasantly
+                    surprised! I assembled 24 of these capacitors into a small array
+                    that was much more powerful in retrospect than I ever realised. I also have a facination with BLDC
+                    motors as well and so I took the largest BLDC I could find, paired with a VESC controller,
+                    and put that onto yet a third frame! I paired this with a radio control throttle and was able to
+                    ride it! The extra torque from the electric drive train, paired with a large sprocket allowed me to
+                    ride around with a comfortable max speed.
+                    For being powered by a super-capacitors, I expected a runtime less than five minutes, but was able
+                    to ride it for close to 30 minutes! And then was able to charge the capacitor bank from a power
+                    supply in 15 minutes. To me that
+                    was a huge win!
+
+                        Saggin' Waggin' V3.0 was a win in a lot of areas:
+                        - New frame that had rigid metal beams.
+                        - Electric drive trane with torque to keep me moving and could climb hills.
+                        - Long run time.
+                        - Quick charge time.
+
+                        But also a loss in some areas as well:
+                        - More precarious steering.
+                        - 3D printed mounts that would break under high stress.</md-block>
+                <div class="text-center">
+                    <img src="/images/saggin_waggin_3.jpg" , alt="saggin_waggin" , class="image_center">
+                    Saggin' Waggin' V3.0
+                </div>
+                <md-block>
+                    ### Conclusion
+                    The Saggin' Waggin' was a fun project for me to work on in high school and early in my college
+                    career. I do eventually want to revisit the project from
+                    the mechanical side as, very well shown, that is the most lacking area of the prototype. I would
+                    love to see a welded metal frame that has the capacitor bank built in to it.
+                    Additionally, would love to see an autonomous robot that would actually have a task with automatic
+                    recharging as well!
+                </md-block>
+
+
+                <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
+
+
+
+
+            </main>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</body>
