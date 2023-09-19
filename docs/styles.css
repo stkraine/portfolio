@@ -96,6 +96,7 @@ body {
     padding: 20px;
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items in a column */
+    overflow-x: scroll;
 }
 .content {
     padding: 20px;
