@@ -21,31 +21,104 @@
 
 
 </head>
-    
+
 <body>
-    
-        <div class="container-fluid">
-            <div class="row">
-                <iframe src="/navigation_bar.html"
-                    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+    <div class="container-fluid">
+        <div class="row">
+            <iframe src="/navigation_bar.html"
+                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
 
-                <main role="main" class="content">
-                    <md-block>
-                        <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
+            <main role="main" class="content">
+                <h1 style="text-align: center;"> Container Based Self-storage Concept </h1>
+                <md-block>
 
-                    </md-block>
+                    ## The Revolution of Self-storage
+                    ***
+                    ### Motivation
+                    The self-storage industry is a \~58 billion dollar industry in 2023
+                    ([Source](https://www.globenewswire.com/news-release/2023/09/18/2744588/0/en/Self-Storage-Market-Size-89940-75-Billion-by-2030-at-CAGR-of-7-5-CAGR-which-is-Booming-Strong-Growth-in-the-Globe-till-2030.html#:~:text=Self%20Storage%20Market%20Summary%3A,USD%2089940.75%20million%20by%202030.))
+                    but is still one of the most technologically deficient industries available. I plan to change
+                    that... One container at a time.
+
+                    This concept for a new self-storage facility draws inspiration from two major industries:
+                    warehousing and shipping.
+                    I saw a very neat concept for an automatic warehouse that used a set of modular shelves and boxes to
+                    store multiple different products
+                    in a simple fasion. This Norwegion company, [Autostore](https://www.autostoresystem.com/), uses a
+                    set of robots to go and gather the same sized carton for order fulfillment. I wanted to expand this
+                    concept to handle many different sized containers that would store someones' possesions.
+                    This brought me to the shipping industry; more specifically: ocean liners and their containers.
+                    Pioneered in the early 40's, Container ships today carry hundreds
+                    of containers across the globe every day. Container ships stack containers up to 9 high! This led me
+                    to introduce RoboStore, a concept for self-storage that works on the modularity of containers and
+                    the robotics inspiration from Autostore.
 
 
-                    <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
+                    ### The Concept
+                    My idea was to take many different sized containers and stack them all on top of one another. This
+                    would
+                    allow a gantry crane to stack and unstack the containers whenever a patron needed to access their
+                    possesions.
+                    This concept poses many different advantages:
+
+                        - Modular: Different markets could have different sized facilities and number of containers.
+                        - Extensible: The capacity of a facility could be easily expanded just by adding more containers.
+                        - Secure: By abstracting away the stereotypical garage doors, this concept can stack containers in a
+                        safer environment away from thieves and damage.
+                        - Cheap: By using the space more effectively, the savings can be passed to the users.
+                        - Adaptible: Due to the nature of the concept, old department stores could be adapted to serve as
+                        RoboStore locations.
+                        - Flexible: Containers could be transfered to other RoboStore locations to help someone move to a
+                        new city or town.
+
+                    ### V1.0 The Initial Concept
+                    As a starting point for the project, I began to make a small wooden prototype that worked on some
+                    stepper motors and a small gantry. I started with a single size of box and developed a very simple
+                    algorithm for stacking the containers. This concept was a lot of fun to make, but suffered from some
+                    really bad flaws:
+
+                        - The gantry was really slow as any speed would cause the belts to slip.
+                        - Construction quality was... lacking to say the least. This was due to the speed at
+                        which the prototype was made. Additionally, the wood was quite flimsy.
+                        - Wobbly gantry crane. When the crane would drop or come up, there was a lot of swaying
+                        because of the motor.
+                </md-block>
+                <div class="text-center">
+                    <!-- <img src="/images/saggin_waggin_2.jpg" , alt="saggin_waggin" , class="image_center">
+                    Saggin' Waggin' V2.0 -->
+                </div>
+                <md-block>
+                ### Innovation Challenge
+                I have taken this concept to a competition, the innovation challenge, at the University of Cincinnati. 
+                This competition has given me some funding and resources to continue this project. I am currently competing at this moment. So I will continue to update this page regularly.
+                My current plan of action is as follows:
+
+                    - Make a CAD model for the prototype
+                    - Design a business model and logo
+                    - Make a new prototype with Aluminum and steel that contains more detail
+                    - Construct a sample app that shows how someone would access their possesions
+                </md-block>
+                <div class="text-center">
+                    <!-- <img src="/images/saggin_waggin_3.jpg" , alt="saggin_waggin" , class="image_center">
+                    Saggin' Waggin' V3.0 -->
+                </div>
+                <md-block>
+                    
+
+                </md-block>
+
+
+                <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
 
 
 
 
-                </main>
-            </div>
+            </main>
         </div>
-    
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
