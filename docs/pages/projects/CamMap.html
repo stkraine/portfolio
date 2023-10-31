@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="back">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamMap</title>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        hljs.configure({ languages: [lang - python] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script src="/scripts/background.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <iframe src="/navigation_bar.html"
+                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+
+            <main role="main" class="content">
+                <h1 style="text-align: center;"> CamMap </h1>
+                <md-block>
+
+                    ## CamMap: an app for mapping a commute
+                    ***
+                    This has become my latest project as of now. I want to make an HD map of my commute to and from school. In order to do this 
+                    I plan on using my phone camera to capture images and the GPS within my phone to get a general location. From there, the data can be sent to 
+                    a remote server (at my house) that can start to construct the map. My hope is that with more and more commutes, I will be able to start accounting
+                    for the lack of accuracy within my phone's GPS. What I have envisioned in my head is a graph optimisation problem that does two things:
+                    ***
+                    - First, it will create a single map for the single commute
+                    - Second, the server will merge the single map into the existing full-scale map to create a single, well constructed, HD map. 
+                    ***
+                    My plan is to use the LightGlue algorithm for finding the relationship between different images. Additionally, I hope that the architecture will prove to be
+                    a lightweight application on the phone, while keeping most of the computation on a "remote" server.
+
+                    This project is proving to be very challenging for me as I am not an android developer... yet. I have started 
+                    to work with Android Studio for designing the app, however, that is still in its infincy.
+                </md-block>
+
+                <!-- <div class="text-center">
+                    <img src="/images/vending_machine.jpg" , alt="vending_machine" , class="image_center">
+                    Vending Machine
+                </div> -->
+ 
+
+
+                <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
+
+
+
+
+            </main>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</body>
