@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="back">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Self Storage</title>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        hljs.configure({ languages: [lang - python] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script src="/docs/scripts/background.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <iframe src="/docs/navigation_bar.html"
+                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+
+            <main role="main" class="content">
+                <h1 style="text-align: center;"> A fun adventure into robotics and puzzles! </h1>
+                <md-block>
+
+                    ## A fun playground
+                    ***
+                    ### Motivation
+                    I have always loved seeing automation technologies in action and this was just a fun little project
+                    where I can continue to build
+                    that love for it. The intention is to have robot arm play a puzzle game of stacking cyliners of the
+                    same color on top of each other.
+                    It is kind of like Hanois tower but not quite at the same time. I would urge you to take a look at
+                    this video to see my inspiration:
+                </md-block>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8SDY7CWn6A0?si=vI0KzlGzv7gqRHmp"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <md-block>
+
+                    ### The Concept
+                    My thought process was to take a six axis robot arm and have it scoop the circles off of each peg to
+                    move them to the others.
+
+                    To do that I first had to make an arm!
+
+                    ### The Robot Arm
+                    I started by assembling a six-axis arm from Annin robotics. This arm was a project of its own and
+                    there might be a page on that coming soon!
+
+                </md-block>
+                <div class="text-center">
+                    <img src="/docs/images/RobotArmConstruction.jpg" , alt="ring" , class="image_center">
+                    Robot Arm
+                </div>
+                <md-block>
+                    ### The game pieces
+                    After completing the robot arm, I then had to figure out how to manipulate the game pieces for
+                    actually playing the game. I started by first using Onshape
+                    to design a bracket to hold the disks with the robot arm
+                </md-block>
+                <div class="text-center">
+                    <img src="/docs/images/ringHolder.png" , alt="ringHolder" , class="image_center">
+                    Ring Holder
+                </div>
+                <md-block>
+
+                    Following the design of the holder, I printed it out and it was a perfect fit on the robot arm!
+                </md-block>
+                <div class="text-center">
+                    <img src="/docs/images/emptyRingHolder.jpg" , alt="ringHolderOnArm" , class="image_center">
+                    Ring Holder
+                </div>
+                <md-block>
+                    Naturally, the ring holder needed to hold something! Following the design and printing of the ring
+                    holder, I deigned a simple ring that has a groove in the bottom so that they
+                    can be manipulated with the robot arm!
+                </md-block>
+                <div class="text-center">
+                    <img src="/docs/images/ring.png" , alt="ring" , class="image_center">
+                    Ring
+                </div>
+                <md-block>
+                    After some more fun in Onshape, I was able to print a ring that nested perfectly in the groove on
+                    the holder. Additionally, there is a short cavity on the top that allows the rings to stack on top
+                    of each other!
+                </md-block>
+                <div class="text-center">
+                    <img src="/docs/images/ringBeingHeld.jpg" , alt="ringBeingHeld" , class="image_center">
+                    Ring
+                </div>
+                <md-block>
+                    Next up I need to design the pegs for the game and work on the algorithm for sorting the rings into
+                    their apropriate colors. I feel like this could be a really cool application of the A* algorithm but
+                    that is still to come!
+                </md-block>
+
+
+                <!-- THIS IS WHERE ALL THE COOL THINGS GO!!! (in markdown)-->
+
+
+
+
+            </main>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/docs/styles.css">
+</body>
